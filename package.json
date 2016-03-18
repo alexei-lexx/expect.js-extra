@@ -1,0 +1,24 @@
+{
+  "name": "expect.js-extra",
+  "version": "0.0.0",
+  "description": "Add some extra features to the expect.js library",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alexei-lexx/expect.js-extra.git"
+  },
+  "author": "Alexei Lexx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexei-lexx/expect.js-extra/issues"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "expect.js": "^0.3.1"
+  }
+}
