@@ -16,7 +16,8 @@
     "url": "https://github.com/alexei-lexx/expect.js-extra/issues"
   },
   "devDependencies": {
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "util": "^0.10.3"
   },
   "dependencies": {
     "expect.js": "^0.3.1"
