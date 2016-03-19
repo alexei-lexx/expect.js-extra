@@ -8,7 +8,7 @@ describe('expect.js', function() {
       });
 
       it('are available', function() {
-        expect(true).to.be.ok();
+        expect(expect.Assertion.prototype).to.have.property('be');
       });
     });
 
@@ -18,7 +18,7 @@ describe('expect.js', function() {
       });
 
       it('are available', function() {
-        expect(true).to.be.ok();
+        expect(expect.Assertion.prototype).to.have.property('be');
       });
     });
   });
@@ -29,8 +29,8 @@ describe('expect.js', function() {
         expect = require('expect.js');
       });
 
-      it('are not available', function() {
-        expect().fail();
+      xit('are not available', function() {
+        expect(expect.Assertion.prototype).to.not.have.property('containEql');
       });
     });
 
@@ -40,7 +40,7 @@ describe('expect.js', function() {
       });
 
       it('are available', function() {
-        expect().fail();
+        expect(expect.Assertion.prototype).to.have.property('containEql');
       });
     });
   });
