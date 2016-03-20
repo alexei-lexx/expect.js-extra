@@ -1,15 +1,7 @@
+var err = require('./support/err');
+var expect = require('../index');
+
 describe('expect.js-extra', function() {
-  var expect = require('../index');
-
-  function err(fn, msg) {
-    try {
-      fn();
-      throw new Error('Expected an error');
-    } catch (err) {
-      expect(msg).to.be(err.message);
-    }
-  }
-
   describe('expect(array).to.containEql(element)', function() {
     context('when the element from the string array is given', function() {
       var arr = ['foo', 'bar'];
