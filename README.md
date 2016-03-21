@@ -8,6 +8,11 @@ npm install expect.js-extra
 
 ## Usage
 
+```js
+// Instead of require('expect.js');
+var expect = require('expect.js-extra');
+```
+
 **containEql**: works like `contain`, but uses the deep equality
 
 ```js
