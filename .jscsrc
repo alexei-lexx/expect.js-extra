@@ -2,5 +2,5 @@
   "preset": "node-style-guide",
   "requireEarlyReturn":  false,
   "verbose": true,
-  "validateQuoteMarks": "escape"
+  "validateQuoteMarks": false
 }
