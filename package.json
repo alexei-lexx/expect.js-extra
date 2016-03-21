@@ -1,6 +1,6 @@
 {
   "name": "expect.js-extra",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Add some extra features to the expect.js library",
   "main": "index.js",
   "scripts": {
