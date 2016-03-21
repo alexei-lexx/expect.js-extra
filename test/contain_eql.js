@@ -30,20 +30,20 @@ describe('expect.js-extra', function() {
       });
     });
 
-    context('when the element doesn\'t belong to the array', function() {
+    context("when the element doesn't belong to the array", function() {
       var arr = ['foo'];
       var el = 'bar';
 
       it('raises the appropriate message', function() {
         err(function() {
           expect(arr).to.containEql(el);
-        }, 'expected [ \'foo\' ] to contain \'bar\'');
+        }, "expected [ 'foo' ] to contain 'bar'");
       });
     });
   });
 
   describe('expect(array).to.not.containEql(element)', function() {
-    context('when the string doesn\'t belong to the string array', function() {
+    context("when the string doesn't belong to the string array", function() {
       var arr = ['foo', 'bar'];
       var el = 'baz';
 
@@ -52,7 +52,7 @@ describe('expect.js-extra', function() {
       });
     });
 
-    context('when the number doesn\'t belong to the number array', function() {
+    context("when the number doesn't belong to the number array", function() {
       var arr = [2, 3];
       var el = 1;
 
@@ -61,7 +61,7 @@ describe('expect.js-extra', function() {
       });
     });
 
-    context('when the object doesn\'t belong to the object array', function() {
+    context("when the object doesn't belong to the object array", function() {
       var arr = [{ a: 1, b: 2 }, { a: 3, b: 4 }];
       var el = { a: 5, b: 6 };
 
@@ -77,7 +77,7 @@ describe('expect.js-extra', function() {
       it('raises the appropriate message', function() {
         err(function() {
           expect(arr).to.not.containEql(el);
-        }, 'expected [ \'bar\', \'foo\' ] to not contain \'foo\'');
+        }, "expected [ 'bar', 'foo' ] not to contain 'foo'");
       });
     });
   });

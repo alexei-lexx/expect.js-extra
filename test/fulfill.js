@@ -24,7 +24,7 @@ describe('expect.js-extra', function() {
     });
   });
 
-  describe('expect(promise).to.not.be.fulfill()', function() {
+  describe('expect(promise).to.not.fulfill()', function() {
     context('when the promise is rejected', function() {
       var promise = Q.reject();
 
