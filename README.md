@@ -25,20 +25,32 @@ expect([{ a: 1, b: 2 }, { a: 3, b: 4 }]).to.containEql({ a: 1, b: 2 });
 var obj = { then: function() {} };
 expect(obj).to.be.a('promise');
 ```
-**fulfill** asserts a promise to fulfill / resolve
+**fulfill** asserts a promise to fulfill. It returns a promise, so don't forget
+to use *return*.
 
 ```js
 var Q = require('q');
 
-expect(Q()).to.fulfill();
-expect(Q.reject()).to.not.fulfill();
+it('is fulfilled', function() {
+  return expect(Q()).to.fulfill();
+});
+
+it('is not fulfilled', function() {
+  return expect(Q.reject()).to.not.fulfill();
+});
 ```
 
-**reject** asserts a promise to reject
+**reject** asserts a promise to reject. It returns a promise, so don't forget
+to use *return*.
 
 ```js
 var Q = require('q');
 
-expect(Q.reject()).to.reject();
-expect(Q()).to.not.reject();
+it('is rejected', function() {
+  return expect(Q.reject()).to.reject();
+});
+
+it('is not rejected', function() {
+  return expect(Q()).to.not.reject();
+});
 ```
