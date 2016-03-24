@@ -1,7 +1,5 @@
 var Q = require('q');
 var expect = require('../index');
-var err = require('./support/err');
-var asyncErr = require('./support/async_err');
 
 describe('expect.js-extra', function() {
   describe('expect(promise).to.reject()', function() {
@@ -17,9 +15,13 @@ describe('expect.js-extra', function() {
       var promise = Q();
 
       it('fails with the appropriate message', function() {
-        return asyncErr(function() {
-          return expect(promise).to.reject();
-        }, "expected { state: 'fulfilled', value: undefined } to reject");
+        var msg = "expected { state: 'fulfilled', value: undefined } to reject";
+
+        return expect(promise).to
+          .reject()
+          .catch(function(err) {
+            expect(err.message).to.be(msg);
+          });
       });
     });
   });
@@ -37,9 +39,14 @@ describe('expect.js-extra', function() {
       var promise = Q.reject();
 
       it('fails with the appropriate message', function() {
-        return asyncErr(function() {
-          return expect(promise).to.not.reject();
-        }, "expected { state: 'rejected', reason: undefined } not to reject");
+        var msg = "expected { state: 'rejected', reason: undefined } " +
+                  'not to reject';
+
+        return expect(promise).to
+          .not.reject()
+          .catch(function(err) {
+            expect(err.message).to.be(msg);
+          });
       });
     });
   });
