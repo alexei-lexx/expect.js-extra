@@ -4,10 +4,18 @@ var expect = require('../index');
 describe('expect.js-extra', function() {
   describe('expect(promise).to.fulfill()', function() {
     context('when the promise is resolved', function() {
-      var promise = Q();
+      var promise = Q('ok');
 
       it('succeeds', function() {
         return expect(promise).to.fulfill();
+      });
+
+      it('resolves with the original result', function() {
+        return expect(promise).to
+          .fulfill()
+          .then(function(result) {
+            expect(result).to.be('ok');
+          });
       });
     });
 

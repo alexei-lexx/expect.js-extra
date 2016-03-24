@@ -10,7 +10,7 @@ describe('expect.js-extra', function() {
         return expect(promise).to.reject();
       });
 
-      it('passes the proper reason as a result', function() {
+      it('resolves with the proper reason as a result', function() {
         return expect(promise).to
           .reject()
           .then(function(reason) {

@@ -40,6 +40,22 @@ it('is not fulfilled', function() {
 });
 ```
 
+Check the resolved value.
+
+```js
+var Q = require('q');
+
+it('is fulfilled', function() {
+  var promise = Q('ok');
+
+  return expect(promise).to
+    .fulfill()
+    .then(function(result) {
+      expect(result).to.be('ok');
+    });
+});
+```
+
 **reject** asserts a promise to reject. It returns a promise, so don't forget
 to use *return*.
 
