@@ -19,6 +19,14 @@ describe('expect.js-extra', function() {
       });
     });
 
+    context('when the promise is resolved with undefined', function() {
+      var promise = Q();
+
+      it('succeeds', function() {
+        return expect(promise).to.fulfill();
+      });
+    });
+
     context('when the promise is rejected', function() {
       var promise = Q.reject();
 
