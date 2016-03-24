@@ -54,3 +54,19 @@ it('is not rejected', function() {
   return expect(Q()).to.not.reject();
 });
 ```
+
+Check the rejected reason.
+
+```js
+var Q = require('q');
+
+it('is rejected', function() {
+  var promise = Q.reject('something wrong happened');
+
+  return expect(promise).to
+    .reject()
+    .then(function(reason) {
+      expect(reason).to.be('something wrong happened');
+    });
+});
+```
