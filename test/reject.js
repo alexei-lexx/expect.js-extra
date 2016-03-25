@@ -50,6 +50,18 @@ describe('expect.js-extra', function() {
       });
     });
 
+    context('when the promise is rejected with the Error', function() {
+      var promise = Q.fcall(function() {
+        throw new Error('something wrong happened');
+      });
+
+      context('and the same reason is expected', function() {
+        it('succeeds', function() {
+          return expect(promise).to.reject('something wrong happened');
+        });
+      });
+    });
+
     context('when the promise is resolved', function() {
       var promise = Q();
 
