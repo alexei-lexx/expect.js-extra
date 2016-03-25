@@ -58,8 +58,8 @@ it('is fulfilled', function() {
 });
 ```
 
-**reject** asserts a promise to reject. It returns a promise, so don't forget
-to use *return*.
+**reject([expected reason])** asserts a promise to reject.
+It returns a promise, so don't forget to use *return*.
 
 ```js
 var Q = require('q');
@@ -68,12 +68,17 @@ it('is rejected', function() {
   return expect(Q.reject()).to.reject();
 });
 
+it('is rejected with the proper reason', function() {
+  var promise = Q.reject('something wrong');
+  return expect(promise).to.reject('something wrong');
+);
+
 it('is not rejected', function() {
   return expect(Q()).to.not.reject();
 });
 ```
 
-Check the rejected reason.
+Another way to check the rejection reason.
 
 ```js
 var Q = require('q');
