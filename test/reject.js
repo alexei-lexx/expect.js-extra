@@ -3,7 +3,15 @@ var expect = require('../index');
 
 describe('expect.js-extra', function() {
   describe('expect(promise).to.reject()', function() {
-    context('when the promise is rejected', function() {
+    context('when the promise is rejected without a reason', function() {
+      var promise = Q.reject();
+
+      it('succeeds', function() {
+        return expect(promise).to.reject();
+      });
+    });
+
+    context('when the promise is rejected with a reason', function() {
       var promise = Q.reject('something wrong happend');
 
       it('succeeds', function() {
