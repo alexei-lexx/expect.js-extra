@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/alexei-lexx/expect.js-extra.svg?branch=master)](https://travis-ci.org/alexei-lexx/expect.js-extra)
+
 # Extra Features of the Expect.js
 
 ## Install
