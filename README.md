@@ -73,6 +73,13 @@ it('is rejected with the proper reason', function() {
   return expect(promise).to.reject('something wrong');
 );
 
+// or
+
+it('is rejected with the proper reason', function() {
+  var promise = Q.reject('something wrong');
+  return expect(promise).to.reject(/wrong/);
+);
+
 it('is not rejected', function() {
   return expect(Q()).to.not.reject();
 });
