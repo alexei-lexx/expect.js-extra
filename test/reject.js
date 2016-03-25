@@ -36,10 +36,31 @@ describe('expect.js-extra', function() {
 
       context('but another reason is expected', function() {
         it('fails', function() {
+          var assertion = expect(promise).to.reject('another reason');
           var msg = 'expected ' +
               "{ state: 'rejected', reason: 'something wrong happened' } " +
               "to reject with 'another reason'";
-          var assertion = expect(promise).to.reject('another reason');
+
+          return expect(assertion).to
+            .reject()
+            .then(function(err) {
+              expect(err.message).to.be(msg);
+            });
+        });
+      });
+
+      context('and the expected reason is a proper regexp', function() {
+        it('succeeds', function() {
+          return expect(promise).to.reject(/wrong/);
+        });
+      });
+
+      context('but the expected reason is an improper regexp', function() {
+        it('fails', function() {
+          var assertion = expect(promise).to.reject(/another/);
+          var msg = 'expected ' +
+              "{ state: 'rejected', reason: 'something wrong happened' } " +
+              "to reject with /another/";
 
           return expect(assertion).to
             .reject()
